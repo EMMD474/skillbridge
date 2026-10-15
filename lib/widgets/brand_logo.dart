@@ -8,12 +8,10 @@ class BrandLogo extends StatelessWidget {
     super.key,
     this.size = 72,
     this.showRing = true,
-    this.onDark = false,
   });
 
   final double size;
   final bool showRing;
-  final bool onDark;
 
   @override
   Widget build(BuildContext context) {
@@ -21,14 +19,13 @@ class BrandLogo extends StatelessWidget {
       width: size,
       height: size,
       decoration: BoxDecoration(
-        gradient: onDark ? null : AppColors.navyGradient,
-        color: onDark ? Colors.white : null,
+        gradient: AppColors.navyGradient,
         borderRadius: BorderRadius.circular(size * 0.28),
       ),
       child: Icon(
         Icons.handshake_rounded,
         size: size * 0.5,
-        color: onDark ? AppColors.navy : AppColors.accent,
+        color: AppColors.accent,
       ),
     );
 
@@ -38,9 +35,7 @@ class BrandLogo extends StatelessWidget {
       padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
         shape: BoxShape.circle,
-        color: onDark
-            ? Colors.white.withValues(alpha: 0.08)
-            : AppColors.navy.withValues(alpha: 0.06),
+        color: AppColors.navy.withValues(alpha: 0.06),
       ),
       child: tile,
     );

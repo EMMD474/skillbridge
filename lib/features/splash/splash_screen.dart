@@ -54,7 +54,21 @@ class _SplashScreenState extends State<SplashScreen> {
                 curve: Curves.easeOutBack,
                 builder: (context, scale, child) =>
                     Transform.scale(scale: scale, child: child),
-                child: const BrandLogo(size: 96, onDark: true),
+                child: Container(
+                  padding: const EdgeInsets.all(16),
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Colors.white,
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withValues(alpha: 0.22),
+                        blurRadius: 30,
+                        offset: const Offset(0, 14),
+                      ),
+                    ],
+                  ),
+                  child: const BrandLogo(size: 96, showRing: false),
+                ),
               ),
               const SizedBox(height: 28),
               const Text(
