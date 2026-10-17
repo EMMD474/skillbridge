@@ -90,6 +90,18 @@ lib/
 The brand uses a **navy blue** palette (`#0B2447`) with an amber accent
 (`#F2A93B`), applied through a Material 3 theme in `lib/core/app_theme.dart`.
 
+### Branding assets
+
+The app icon and native splash screen are generated from
+`assets/branding/`, which is rendered from the real in-app `BrandLogo` widget
+so everything stays consistent. To regenerate after changing the logo:
+
+```bash
+flutter test tool/generate_branding.dart   # render assets/branding/*.png
+dart run flutter_launcher_icons            # app icons (Android, iOS, web)
+dart run flutter_native_splash:create      # native splash screens
+```
+
 ## Shared session state
 
 Every screen can read the logged-in session through `AuthScope`:
